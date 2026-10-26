@@ -1,0 +1,18 @@
+{
+  "name": "haven-hotel-management",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A colorful full-stack hotel room, guest and reservation management system",
+  "scripts": {
+    "setup": "npm ci --prefix backend && npm ci --prefix frontend",
+    "dev": "node dev.js",
+    "build": "npm run build --prefix frontend",
+    "start": "npm start --prefix backend",
+    "test": "node --test --test-isolation=none backend/app.test.js",
+    "lint": "npm run lint --prefix frontend",
+    "seed": "node backend/seed.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
