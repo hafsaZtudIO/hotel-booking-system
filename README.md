@@ -44,7 +44,7 @@ Open http://localhost:5000. Express serves the built frontend, supports browser 
 
 This is a single-property management app for a trusted local environment. There is no user authentication, payment processing, or public guest booking portal. Add authentication and authorization before exposing operational guest data to the internet. File storage and the reservation write queue are designed for one server process; a multi-instance deployment requires a database-level reservation locking strategy.
 
-Room availability is based on overlapping reservation dates. Room status shows occupancy today and is calculated from reservations. The occupancy metric counts active reservations covering today, rather than claiming that a future booking occupies a room now. Reservation values represent bookings, not collected payments. Currency is KES. Existing reservation totals remain fixed when only the status or guest changes; changing room or dates recalculates the amount.
+Room availability is based on overlapping reservation dates. Room status shows occupancy today and is calculated from reservations. The occupancy metric counts active reservations covering today, rather than claiming that a future booking occupies a room now. Reservation values represent bookings, not collected payments. Currency is USD (US dollars). Changing the display currency does not convert existing numeric amounts. Existing reservation totals remain fixed when only the status or guest changes; changing room or dates recalculates the amount.
 
 ## Verification
 
@@ -61,5 +61,6 @@ The API integration test uses an isolated temporary file, covering room/guest CR
 `GET /api/health` reports server readiness. `/api/rooms`, `/api/customers`, and `/api/bookings` support GET and POST; `/:id` supports GET, PUT, and DELETE. Booking responses include their associated guest and room.
 
 No credentials, guest records, node_modules, or generated build files are included in the repository.
+
 
 

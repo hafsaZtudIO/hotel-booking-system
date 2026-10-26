@@ -25,9 +25,9 @@ import {
 import "./index.css";
 const API = import.meta.env.VITE_API_URL || "/api";
 const money = (n) =>
-  new Intl.NumberFormat("en-KE", {
+  new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "KES",
+    currency: "USD",
     maximumFractionDigits: 0,
   }).format(n || 0);
 const date = (d) =>
@@ -738,7 +738,7 @@ function Editor({ kind }) {
                       .filter(Boolean)
                       .map((v) => [v, v]),
                   )}
-                  {field("price", "Nightly rate (KES)", "number", {
+                  {field("price", "Nightly rate (USD)", "number", {
                     min: 1,
                     step: "0.01",
                   })}
@@ -969,3 +969,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
